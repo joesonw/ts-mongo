@@ -1,4 +1,3 @@
-/// <reference path="../../typings/index"/>
 import Query from './';
 import Model from '../Model';
 import * as _ from 'lodash';

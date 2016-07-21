@@ -1,4 +1,3 @@
-export default GeoCondition;
 export abstract class Geo {
     public type: string;
     public coordinates: any;
@@ -11,7 +10,7 @@ export abstract class Geo {
 abstract class GeoCondition {
     abstract query(): any;
 }
-
+export default GeoCondition;
 export class Geometry extends GeoCondition {
     private geo: Geo;
     constructor(geo: Geo) {

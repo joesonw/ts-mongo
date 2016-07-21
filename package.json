@@ -1,13 +1,15 @@
 {
   "name": "ts-mongo",
   "version": "0.0.1",
-  "description": "",
+  "description": "mongodb orm for typescript",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "./node_modules/.bin/tsc -p tsconfig.json"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Qiaosen Huang",
+  "license": "MIT",
   "dependencies": {
     "@types/lodash": "0.0.28",
     "@types/mongodb": "^2.1.29",
@@ -18,5 +20,21 @@
   },
   "devDependencies": {
     "typescript": "^2.0.0-dev.20160705"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joesonw/ts-mongo.git"
+  },
+  "keywords": [
+    "mongodb",
+    "mongo",
+    "orm",
+    "typescript",
+    "ts",
+    "mongoose"
+  ],
+  "bugs": {
+    "url": "https://github.com/joesonw/ts-mongo/issues"
+  },
+  "homepage": "https://github.com/joesonw/ts-mongo#readme"
 }

@@ -1,4 +1,3 @@
-/// <reference path="../../typings/index"/>
 import * as mongo from 'mongodb';
 import QueryComparison from './QueryComparison';
 import Model, {

@@ -1,12 +1,15 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
-		"outDir": "builds",
+		"outDir": "dist",
 		"target": "ES6",
 		"declaration": true,
 		"experimentalDecorators": true,
         "moduleResolution": "node",
 		"emitDecoratorMetadata": true
 	},
-	"compileOnSave": false
+	"compileOnSave": false,
+    "files": [
+        "src/index.ts"
+    ]
 }

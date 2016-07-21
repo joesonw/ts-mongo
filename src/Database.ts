@@ -1,6 +1,4 @@
-/// <reference path="../typings/index"/>
 import * as mongo from 'mongodb';
-
 
 export default class Database {
     private static db: mongo.Db;

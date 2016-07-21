@@ -1,4 +1,3 @@
-/// <reference path="../typings/index"/>
 import {
     ObjectID
 } from 'mongodb';

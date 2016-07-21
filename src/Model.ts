@@ -1,4 +1,3 @@
-/// <reference path="../typings/index"/>
 /// <reference path="../node_modules/reflect-metadata/typings.d.ts"/>
 import ReflectType from './ReflectType';
 import 'reflect-metadata';
