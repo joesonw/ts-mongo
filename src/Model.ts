@@ -1,4 +1,3 @@
-/// <reference path="../node_modules/reflect-metadata/typings.d.ts"/>
 import ReflectType from './ReflectType';
 import 'reflect-metadata';
 import {Db } from 'mongodb';
@@ -46,7 +45,8 @@ export default class Model {
                 _id: (<ObjectId>this['_id']).toObjectID()
             }, data);
         } else {
-            await collection.insertOne(data);
+            const result = await collection.insertOne(data);
+            this['_id'] = new ObjectId(result.ops[0]._id);
         }
     }
     async remove(): Promise<void> {
@@ -97,10 +97,8 @@ export function fromDb<T extends Model>(model: new() => T, data): T {
 
 export function Field<T extends Model>(prototype: T, key: string): void {
     const type = Reflect.getMetadata(ReflectType.TYPE, prototype, key);
-    let flag = 0;
     if (([String, Number, Boolean, Date, ObjectId].indexOf(type) === -1) &&
         (type.__proto__ !== Model)) {
-    console.log(type)
         throw new Error(`@Field can only annotate primitive tyeps and models`);
     }
     prototype.__schema__ = prototype.__schema__ || {};
@@ -114,7 +112,6 @@ export function ArrayField<T extends Model>(embedType) {
     }
     return (prototype: T, key: string):void => {
         const type = Reflect.getMetadata(ReflectType.TYPE, prototype, key);
-        let flag = 0;
         if (Array !== type) {
             throw new Error(`@ArrayField can only annotate arrays`);
         }
