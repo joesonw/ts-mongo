@@ -78,4 +78,13 @@ export default class Query<T extends Model>{
         }
         return result;
     }
+
+    public async count(): Promise<number> {
+        const db = await Database.connect();
+        const collection = this.model.prototype.__collection__;
+        const doResult = await db
+                        .collection(collection)
+                        .count(this.query);
+        return doResult;
+    }
 }

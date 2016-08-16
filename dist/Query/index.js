@@ -84,6 +84,16 @@ class Query {
             return result;
         });
     }
+    count() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const db = yield Database_1.default.connect();
+            const collection = this.model.prototype.__collection__;
+            const doResult = yield db
+                .collection(collection)
+                .count(this.query);
+            return doResult;
+        });
+    }
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Query;

@@ -17,4 +17,5 @@ export default class Query<T extends Model> {
     aggregate(...cond: Array<AggregateQuery>): Promise<void>;
     findOne(): Promise<T>;
     find(): Promise<Array<T>>;
+    count(): Promise<number>;
 }
