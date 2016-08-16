@@ -1,6 +1,6 @@
 {
   "name": "ts-mongo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "mongodb orm for typescript",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
